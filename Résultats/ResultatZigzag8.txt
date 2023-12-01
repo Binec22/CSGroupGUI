@@ -1,0 +1,2 @@
+#Fichier contenant sur chaque ligne : Latitude en degré, Longitude en degré, Altitude en mètre, Temps en secondes, Cap en degré
+43.103699999999996,5.948499999999999,0,0.0,110.0

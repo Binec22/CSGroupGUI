@@ -1,0 +1,10 @@
+<cible_data>
+  <position_initiale>
+    <latitude>43.1037</latitude>
+    <longitude>5.9485</longitude>
+  </position_initiale>
+  <altitude>0</altitude>
+  <cap>110</cap>
+  <vitesse>10</vitesse>
+  <pas_de_temps>1</pas_de_temps>
+</cible_data>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_3af299bcc0eb07f2b1a6e0d6a3822481 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.control.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_3af299bcc0eb07f2b1a6e0d6a3822481" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_3af299bcc0eb07f2b1a6e0d6a3822481 = L.map(
+                "map_3af299bcc0eb07f2b1a6e0d6a3822481",
+                {
+                    center: [43.103699999999996, 5.948499999999999],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7142cb71dbff073320a96f32d102a743 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_3af299bcc0eb07f2b1a6e0d6a3822481);
+        
+    
+            L.Control.TimeDimensionCustom = L.Control.TimeDimension.extend({
+                _getDisplayDateFormat: function(date){
+                    var newdate = new moment(date);
+                    console.log(newdate)
+                    return newdate.format("YYYY-MM-DD HH:mm:ss");
+                }
+            });
+            map_3af299bcc0eb07f2b1a6e0d6a3822481.timeDimension = L.timeDimension(
+                {
+                    period: "PT1S",
+                }
+            );
+            var timeDimensionControl = new L.Control.TimeDimensionCustom(
+                {"autoPlay": true, "loopButton": false, "maxSpeed": 20, "minSpeed": 0.1, "playerOptions": {"loop": false, "startOver": true, "transitionTime": 200}, "position": "bottomleft", "speedSlider": true, "timeSliderDragUpdate": false}
+            );
+            map_3af299bcc0eb07f2b1a6e0d6a3822481.addControl(this.timeDimensionControl);
+
+            var geoJsonLayer = L.geoJson({"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[5.948499999999999, 43.103699999999996], [5.94892836308292, 43.103601735486855], [5.949367020597203, 43.103531749844386], [5.949812477914508, 43.103490600720995], [5.950261186234882, 43.10347861599542], [5.950709570858788, 43.103495891162815], [5.9511540596654635, 43.10354228857343], [5.951591111570735, 43.10361743852998], [5.952017244737577, 43.103720742235005], [5.952429064314669, 43.10385137656455], [5.952823289481963, 43.104008300630234], [5.953196779587821, 43.104190264077026], [5.953546559169456, 43.10439581705064], [5.953869841657393, 43.104623321754914], [5.9541640515750744, 43.10487096550677], [5.954426845056768, 43.10513677518474], [5.954656128520308, 43.10541863295543], [5.954850075345917, 43.10571429315262], [5.955007140428243, 43.10602140017427], [5.955126072485661, 43.10633750725453], [5.955205924028783, 43.10666009596112], [5.955246058908777, 43.10698659626262], [5.955246157385336, 43.10731440700562], [5.955206218673929, 43.107640916638445], [5.9551265609520625, 43.10796352401652], [5.955007818824463, 43.108279659123426], [5.954850938267413, 43.10858680354269], [5.954657169092491, 43.10888251051734], [5.954428054989771, 43.109164424437445], [5.954165421229791, 43.10943029960065], [5.953871360122272, 43.109678018096325], [5.9535482143474265, 43.109905606671155], [5.95319855829267, 43.11011125244197], [5.9528251775433825, 43.1102933173309], [5.952431046691142, 43.110450351108064], [5.95201930563622, 43.110581102938205], [5.9515932345730995, 43.110684531339324], [5.951156227858346, 43.11075981247437], [5.9507117669689675, 43.11080634671003], [5.950263392766728, 43.11082376339043], [5.9498146772893685, 43.11081192378789], [5.949369195293439, 43.110770922207436], [5.948930495775501, 43.11070108523594], [5.948502073698524, 43.1106029691422], [5.948087342148762, 43.11047735544848], [5.947689605144909, 43.11032524470859], [5.947312031316158, 43.11014784854215], [5.946957628658865, 43.10994657998817], [5.946629220572901, 43.1097230422546], [5.946329423368639, 43.10947901595343], [5.946060625423739, 43.10921644492259], [5.9458249681557875, 43.10893742074745], [5.945624328962391, 43.10864416610511], [5.945460306264616, 43.10833901706374], [5.945334206772937, 43.1080244044779], [5.945247035077139, 43.107702834627894], [5.945199485643101, 43.107376869257095], [5.945191937280253, 43.10704910516633], [5.94522445012371, 43.106722153527606], [5.945296765155222, 43.10639861908212], [5.945408306266658, 43.10608107938816], [5.945558184849672, 43.10577206428417], [5.945745206874919, 43.1054740357309], [5.945967882404467, 43.10518936819316], [5.946224437461601, 43.10492032971763], [5.9465128281634625, 43.10466906385775], [5.946830757003941, 43.104437572589795], [5.947175691157082, 43.1042277003565], [5.947544882655216, 43.10404111936562], [5.947935390281038, 43.103879316260695], [5.948344102999234, 43.103743580270546], [5.948767764741, 43.10363499293203], [5.949203000343977, 43.10355441946821], [5.9496463424409765, 43.10350250189079], [5.95009425908325, 43.103479653881855], [5.950543181878281, 43.10348605749594], [5.950989534417887, 43.103521661708584], [5.951429760770197, 43.10358618282313], [5.951860353808498, 43.10367910673243], [5.9522778831512575, 43.10379969301744], [5.95267902249076, 43.103946980849976], [5.953060576092613, 43.10411979665224], [5.953419504255028, 43.104316763452445], [5.953752947525042, 43.10453631186124], [5.954058249478763, 43.1047766925816], [5.954332977884152, 43.10503599035237], [5.954574944077752, 43.10531213921379], [5.9547822204009915, 43.10560293897352], [5.954953155557152, 43.105906072741554], [5.955086387766663, 43.106219125394155], [5.9551808556159145, 43.106539602819474], [5.955235806513165, 43.10686495179159], [5.955250802684167, 43.1071925803141], [5.955225724659761, 43.107519878271496], [5.9551607722276465, 43.107844238223514], [5.955056462840739, 43.108163076176886], [5.95491362749481, 43.10847385216889], [5.95473340410824, 43.10877409049902], [5.954517228456626, 43.10906139944752], [5.95426682273447, 43.109333490323856], [5.953984181835064, 43.109588195693625]]}, "properties": {"times": ["2023-05-01T00:00:00", "2023-05-01T00:00:05", "2023-05-01T00:00:10", "2023-05-01T00:00:15", "2023-05-01T00:00:20", "2023-05-01T00:00:25", "2023-05-01T00:00:30", "2023-05-01T00:00:35", "2023-05-01T00:00:40", "2023-05-01T00:00:45", "2023-05-01T00:00:50", "2023-05-01T00:00:55", "2023-05-01T00:01:00", "2023-05-01T00:01:05", "2023-05-01T00:01:10", "2023-05-01T00:01:15", "2023-05-01T00:01:20", "2023-05-01T00:01:25", "2023-05-01T00:01:30", "2023-05-01T00:01:35", "2023-05-01T00:01:40", "2023-05-01T00:01:45", "2023-05-01T00:01:50", "2023-05-01T00:01:55", "2023-05-01T00:02:00", "2023-05-01T00:02:05", "2023-05-01T00:02:10", "2023-05-01T00:02:15", "2023-05-01T00:02:20", "2023-05-01T00:02:25", "2023-05-01T00:02:30", "2023-05-01T00:02:35", "2023-05-01T00:02:40", "2023-05-01T00:02:45", "2023-05-01T00:02:50", "2023-05-01T00:02:55", "2023-05-01T00:03:00", "2023-05-01T00:03:05", "2023-05-01T00:03:10", "2023-05-01T00:03:15", "2023-05-01T00:03:20", "2023-05-01T00:03:25", "2023-05-01T00:03:30", "2023-05-01T00:03:35", "2023-05-01T00:03:40", "2023-05-01T00:03:45", "2023-05-01T00:03:50", "2023-05-01T00:03:55", "2023-05-01T00:04:00", "2023-05-01T00:04:05", "2023-05-01T00:04:10", "2023-05-01T00:04:15", "2023-05-01T00:04:20", "2023-05-01T00:04:25", "2023-05-01T00:04:30", "2023-05-01T00:04:35", "2023-05-01T00:04:40", "2023-05-01T00:04:45", "2023-05-01T00:04:50", "2023-05-01T00:04:55", "2023-05-01T00:05:00", "2023-05-01T00:05:05", "2023-05-01T00:05:10", "2023-05-01T00:05:15", "2023-05-01T00:05:20", "2023-05-01T00:05:25", "2023-05-01T00:05:30", "2023-05-01T00:05:35", "2023-05-01T00:05:40", "2023-05-01T00:05:45", "2023-05-01T00:05:50", "2023-05-01T00:05:55", "2023-05-01T00:06:00", "2023-05-01T00:06:05", "2023-05-01T00:06:10", "2023-05-01T00:06:15", "2023-05-01T00:06:20", "2023-05-01T00:06:25", "2023-05-01T00:06:30", "2023-05-01T00:06:35", "2023-05-01T00:06:40", "2023-05-01T00:06:45", "2023-05-01T00:06:50", "2023-05-01T00:06:55", "2023-05-01T00:07:00", "2023-05-01T00:07:05", "2023-05-01T00:07:10", "2023-05-01T00:07:15", "2023-05-01T00:07:20", "2023-05-01T00:07:25", "2023-05-01T00:07:30", "2023-05-01T00:07:35", "2023-05-01T00:07:40", "2023-05-01T00:07:45", "2023-05-01T00:07:50", "2023-05-01T00:07:55", "2023-05-01T00:08:00", "2023-05-01T00:08:05", "2023-05-01T00:08:10", "2023-05-01T00:08:15", "2023-05-01T00:08:20"], "style": {"color": "red", "weight": 2}}}]}, {
+                    pointToLayer: function (feature, latLng) {
+                        if (feature.properties.icon == 'marker') {
+                            if(feature.properties.iconstyle){
+                                return new L.Marker(latLng, {
+                                    icon: L.icon(feature.properties.iconstyle)});
+                            }
+                            //else
+                            return new L.Marker(latLng);
+                        }
+                        if (feature.properties.icon == 'circle') {
+                            if (feature.properties.iconstyle) {
+                                return new L.circleMarker(latLng, feature.properties.iconstyle)
+                                };
+                            //else
+                            return new L.circleMarker(latLng);
+                        }
+                        //else
+
+                        return new L.Marker(latLng);
+                    },
+                    style: function (feature) {
+                        return feature.properties.style;
+                    },
+                    onEachFeature: function(feature, layer) {
+                        if (feature.properties.popup) {
+                        layer.bindPopup(feature.properties.popup);
+                        }
+                        if (feature.properties.tooltip) {
+                        layer.bindTooltip(feature.properties.tooltip);
+                        }
+                    }
+                })
+
+            var timestamped_geo_json_967664a648ba1be1b6b229ffc1e15cc3 = L.timeDimension.layer.geoJson(
+                geoJsonLayer,
+                {
+                    updateTimeDimension: true,
+                    addlastPoint: true,
+                    duration: undefined,
+                }
+            ).addTo(map_3af299bcc0eb07f2b1a6e0d6a3822481);
+        
+</script>
+</html>
